@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E1802E5-6A2D-437A-A978-FC983F7B23DA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Laboratorio</RootNamespace>
+    <AssemblyName>Laboratorio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.7.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.7.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.7.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActualizaPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizaPelicula.Designer.cs">
+      <DependentUpon>ActualizaPelicula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizaProductora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizaProductora.Designer.cs">
+      <DependentUpon>ActualizaProductora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorraPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorraPelicula.Designer.cs">
+      <DependentUpon>BorraPelicula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorraProductora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorraProductora.Designer.cs">
+      <DependentUpon>BorraProductora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaAño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaAño.Designer.cs">
+      <DependentUpon>ConsultaAño.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaFranquicia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaFranquicia.Designer.cs">
+      <DependentUpon>ConsultaFranquicia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaProductora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaProductora.Designer.cs">
+      <DependentUpon>ConsultaProductora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaTitulo.Designer.cs">
+      <DependentUpon>ConsultaTitulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearPelicula.Designer.cs">
+      <DependentUpon>CrearPelicula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearProductora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearProductora.Designer.cs">
+      <DependentUpon>CrearProductora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas.Designer.cs">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ActualizaPelicula.resx">
+      <DependentUpon>ActualizaPelicula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizaProductora.resx">
+      <DependentUpon>ActualizaProductora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorraPelicula.resx">
+      <DependentUpon>BorraPelicula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorraProductora.resx">
+      <DependentUpon>BorraProductora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaAño.resx">
+      <DependentUpon>ConsultaAño.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaFranquicia.resx">
+      <DependentUpon>ConsultaFranquicia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaProductora.resx">
+      <DependentUpon>ConsultaProductora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaTitulo.resx">
+      <DependentUpon>ConsultaTitulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearPelicula.resx">
+      <DependentUpon>CrearPelicula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearProductora.resx">
+      <DependentUpon>CrearProductora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas.resx">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
