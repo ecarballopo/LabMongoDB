@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Laboratorio.Program;
 
 namespace Laboratorio
 {
@@ -41,21 +42,26 @@ namespace Laboratorio
         private void ConsultarTitulo_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new ConsultaTitulo());
+            TituloPelicula("a");
         }
 
         private void ConsultaFranquicia_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new ConsultaFranquicia());
+            FranquiciaPelicula("a");
         }
 
         private void ConsultaAño_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new ConsultaAño());
+            AñoPelicula(2015,2020);
+
         }
 
         private void ConsultaProductora_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new ConsultaProductora());
+            ProductoraPelicula("b");
         }
 
         private void ConsultaEstadisticas_Click(object sender, EventArgs e)
@@ -66,21 +72,25 @@ namespace Laboratorio
         private void ActualizarPelicula_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new ActualizaPelicula());
+            UpdatePelicula("aa", "z");
         }
 
         private void ActualizaProductora_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new ActualizaProductora());
+            UpdateProductora("b", "n");
         }
 
         private void BorrarPelicula_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new BorraPelicula());
+            DeletePelicula("z");
         }
 
         private void BorrarProductora_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new BorraProductora());
+            DeleteProductora("n");
         }
     }
 }

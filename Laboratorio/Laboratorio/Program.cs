@@ -41,10 +41,10 @@ namespace Laboratorio
             {
                 Console.WriteLine("*" + pelicula._id);
             }*/
-            TituloPelicula("Titanic2");
-            /*Application.EnableVisualStyles();
+            //TituloPelicula("Titanic2");
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Programa());*/
+            Application.Run(new Programa());
         }
 
 
@@ -57,13 +57,13 @@ namespace Laboratorio
             public string NombreD { get; set; }
             public string Franquicia { get; set; }
             public string Pais { get; set; }
-            public string Año { get; set; }
+            public float Año { get; set; }
             public float Duracion { get; set; }
             public string Productora { get; set; }
             public Actores Actores { get; set; }
 
             public Pelicula(string nombreP,string generoP,string nombreD,string franquicia,
-                string pais,string año, float duracion,string productora,Actores actores)
+                string pais,float año, float duracion,string productora,Actores actores)
             {
                 NombreP = nombreP;
                 GeneroP = generoP;
@@ -93,10 +93,10 @@ namespace Laboratorio
             public ObjectId _id { get; set; }
             public float IdProductora { get; set; }
             public string NombreCP { get; set; }
-            public string Año { get; set; }
+            public float Año { get; set; }
             public string Web { get; set; }
 
-            public Productora(string nombreCP,string año, string web)
+            public Productora(string nombreCP,float año, string web)
             {
                 NombreCP = nombreCP;
                 Año = año;
@@ -151,9 +151,9 @@ namespace Laboratorio
 
         public static void AñoPelicula(float añoI,float añoF)
         {
-            var peliculas = Coll_Peliculas.Find(b => System.Convert.ToSingle(b.Año) <= añoF).Limit(100).ToListAsync().Result;
+            var peliculas = Coll_Peliculas.Find(b => b.Año <= añoF).Limit(100).ToListAsync().Result;
 
-            Console.WriteLine("Por Franquicia");
+            Console.WriteLine("Por rango de Año");
             foreach (var pelicula in peliculas)
             {
                 Console.WriteLine(pelicula._id + " " + pelicula.NombreP + " " + pelicula.NombreD + " " + pelicula.Franquicia
@@ -173,14 +173,16 @@ namespace Laboratorio
             }
         }
 
-        public static void UpdatePelicula(string nombreP)
+        public static void UpdatePelicula(string nombreP, string Actualizado)
         {
-            var UpdateP = Builders<Pelicula>.Update.Set(s => s.NombreP,"Nuevo");
+            var UpdateP = Builders<Pelicula>.Update.Set(s => s.NombreP,Actualizado);
             Coll_Peliculas.UpdateOne(s => s.NombreP == nombreP, UpdateP);
+            Console.WriteLine("Nombre de pelicula actualizado");
         }
         public static void DeletePelicula(string nombreP)
         {
             Coll_Peliculas.DeleteOne(s => s.NombreP == nombreP);
+            Console.WriteLine("Pelicula Borrada");
         }
 
         //Productoras
@@ -199,14 +201,16 @@ namespace Laboratorio
                 Console.WriteLine(productora._id + " " + productora.NombreCP + " " + productora.Año + " " + productora.Web);
             }
         }
-        public static void UpdateProductora(string nombreCP)
+        public static void UpdateProductora(string nombreCP, string Actualizado)
         {
-            var UpdateCP = Builders<Productora>.Update.Set(s => s.NombreCP, "Nuevo");
+            var UpdateCP = Builders<Productora>.Update.Set(s => s.NombreCP, Actualizado);
             Coll_Productoras.UpdateOne(s => s.NombreCP == nombreCP, UpdateCP);
+            Console.WriteLine("Nombre de productora actualizado");
         }
         public static void DeleteProductora(string nombreCP)
         {
             Coll_Productoras.DeleteOne(s => s.NombreCP == nombreCP);
+            Console.WriteLine("Productora borrada");
         }
 
         public static void Estadisticas(string productora)

@@ -20,7 +20,7 @@ namespace Laboratorio
 
         private void Crear_Click(object sender, EventArgs e)
         {
-            Productora p = new Productora(Nombre_CP.Text,AñoCP.Text,WebCP.Text);
+            Productora p = new Productora(Nombre_CP.Text, System.Convert.ToSingle(AñoCP.Text),WebCP.Text);
             CreateOneProductora(p);
         }
     }

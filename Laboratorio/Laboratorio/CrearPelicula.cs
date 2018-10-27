@@ -23,7 +23,7 @@ namespace Laboratorio
             string[] actores = new string[10];
             Actores a = new Actores(actores);
             Pelicula p = new Pelicula(Nombre_P.Text,Genero_P.Text,Nombre_D.Text,
-                Franquicia_P.Text,Pais_P.Text,Año_P.Text, System.Convert.ToSingle(Duracion_P.Text),Productora_P.Text,a);
+                Franquicia_P.Text,Pais_P.Text, System.Convert.ToSingle(Año_P.Text), System.Convert.ToSingle(Duracion_P.Text),Productora_P.Text,a);
             CreateOnePelicula(p);
         }
     }
